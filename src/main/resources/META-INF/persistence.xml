@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="1.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+    <!--suppress JpaDomInspection -->
+    <persistence-unit name="ticketReservation">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>orz.mikeneck.spring.study.second.ticket.model.Event</class>
+        <class>orz.mikeneck.spring.study.second.ticket.model.Rank</class>
+        <class>orz.mikeneck.spring.study.second.ticket.model.Reservation</class>
+        <class>orz.mikeneck.spring.study.second.ticket.model.Ticket</class>
+        <class>orz.mikeneck.spring.study.second.ticket.model.Account</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
+            <property name="hibernate.connection.username" value="mike" />
+            <property name="hibernate.connection.password" value="mike" />
+            <property name="hibernate.connection.url" value="jdbc:h2:/Users/mike/h2database/spring-study" />
+        </properties>
+    </persistence-unit>
+
+</persistence>

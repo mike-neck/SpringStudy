@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="registDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>org.h2.Driver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:h2:/Users/mike/h2database/spring-study</value>
+        </property>
+        <property name="username">
+            <value>mike</value>
+        </property>
+        <property name="password">
+            <value>mike</value>
+        </property>
+    </bean>
+
+    <bean id="teamDao" class="orz.mikeneck.spring.study.second.regist.dao.impl.TeamDaoImpl">
+        <property name="dataSource" ref="registDataSource" />
+    </bean>
+
+    <bean id="playerDao" class="orz.mikeneck.spring.study.second.regist.dao.impl.PlayerDaoImpl">
+        <property name="dataSource" ref="registDataSource" />
+    </bean>
+
+</beans>
